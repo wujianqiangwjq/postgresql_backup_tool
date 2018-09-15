@@ -1,0 +1,23 @@
+source:
+  host: 127.0.0.1
+  username: postgres
+  password: 123456
+  port: 5432
+  database: lico
+  driver: postgres
+  prefix: 
+  dbtable: blog_job
+  field: [id,jobid,jobname,isdeleted,json_body,create]
+  field_primary: id
+
+dest:
+  host: 127.0.0.1
+  username: postgres
+  password: 123456
+  port: 5432
+  database: test
+  driver: postgres
+  prefix: 
+  dbtable: blog_job
+  field: [id,jobid,jobname,isdeleted,json_body,create]
+  field_primary: id

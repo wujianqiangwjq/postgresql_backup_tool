@@ -1,0 +1,38 @@
+这个工具主要是我公司的需要，我们买的产品，客户端经常需要升级，在升级过程中希望保留老版本的数据，
+     可是老版本与新版本表结构有一点差异(大部分是相同的,可能老板本一些字段去掉了，或者改字段名称)
+	基于这种需求写了这个工具,同步数据
+以下是配置文件config.yml的配置内容:
+source:
+  host: 127.0.0.1
+  username: postgres
+  password: 123456
+  port: 5432
+  database: lico
+  driver: postgres
+  prefix: 
+  dbtable: blog_job
+  field: [id,jobid,jobname,isdeleted,json_body,create]
+  field_primary: id
+
+dest:
+  host: 127.0.0.1
+  username: postgres
+  password: 123456
+  port: 5432
+  database: test
+  driver: postgres
+  prefix: 
+  dbtable: blog_job
+  field: [id,jobid,jobname,isdeleted,json_body,create]
+  field_primary: id
+
+source:是源数据，dest:是需要同步的目标数据
+host: 主机
+username: 数据库用户名
+password: 数据库密码
+port: 端口
+database: 数据库
+dbtable: 表名
+driver: 这里是数据库驱动,只能有postgres,mysql..特殊字符
+field: 需要同步的数据的字段，这里的字段值source,dest需要一一对应
+field_primary: 表的主键字段
